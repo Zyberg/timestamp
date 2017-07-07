@@ -1,0 +1,41 @@
+html
+	head
+		meta(name='viewport', content='width=device-width', initial-scale=1)
+		title Timestamp
+
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+		link(rel='stylesheet', href='style.css')
+
+	body
+		div.container
+			div#info
+				h1 #Timestamp
+
+				blockquote
+					h2 Usage:
+					ol
+						li Enter a date in 
+							code Natural Language
+							span or
+							code Unix
+							form.
+						li Press 
+							i Get Full Date
+							span  button.
+
+				h2 Example:
+				h3 If you enter: 
+				code 1450137600
+				h3 You will get back:
+				samp { "unix": 1450137600, "natural": "December 15, 2015" }
+
+			div#app
+				blockquote
+					block dates
+
+				form(method='POST' action='/date')
+					div.form-group
+						label(for='date') Date:
+						input#date.form-control(autofocus, type='text', placeholder='December 15th, 2015 / 1450137600', name='date')
+					div.form-group
+						button.btn.btn-default(type='submit') Get Full Date
