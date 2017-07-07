@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 app.post("/date", (req, res) => {
   var date = timestamp.timestampObject(req.body.date);
   
-  res.render("dated", { natural: date["natural"], unix: date["unix"]});
+  res.render("dated", { date: JSON.stringify(date) });
 
 });
 
