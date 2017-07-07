@@ -23,7 +23,7 @@ exports.timestampObject = (input) => {
 
 		// check whether the date is valid and populate result's object
 		if(date_natural.isValid()){
-			result.unix = date_natural.unix();
+			result.unix = String(date_natural.unix());
 			result.natural = date_natural.format("MMMM Do, YYYY");
 		}
 	} else {
