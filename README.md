@@ -1,4 +1,4 @@
-# Timestamp Microservice for FCC Backend Course
+# Timestamp Microservice
 
 ### Live: [Timestamp](https://spectrum-pocket.glitch.me/)
 
