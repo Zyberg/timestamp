@@ -16,22 +16,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/date", (req, res) => {
-  var date = timestamp.timestampObject(req.body.date);
+  var date = req.body.date;
   
-  res.render("dated", { date: JSON.stringify(date) });
+  // ensure that input isn't an empty string
+  if (date == "")
+    res.render("error", { error: "You passed in an EMPTY date!" });
+  
+  res.render("dated", { date: JSON.stringify( timestamp.timestampObject(date)) });
 
-});
-
-
-app.get("/:input", (req, res) => {
-  // get the input from the request parameters
-  var input = req.params.input;
-
-  // ensure that the input was passed
-  if (!input)
-    res.send("Pass in some input for this to work!");
-
-  res.send(timestamp.timestampObject(input))
 });
 
 // listen for requests :)
